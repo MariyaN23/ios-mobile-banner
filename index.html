@@ -7,32 +7,76 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-<div class="banner__wrapper">
+<div class="banner">
     <a href="#" class="banner__close">
-        <img src="./assets/cross.svg" alt="close" />
+        <img src="./assets/cross.svg" alt="close"/>
     </a>
     <div class="banner__content">
         <h1 data-i18n="Get Unlimited <br>Access" class="banner__content__title">
             Get Unlimited <br>Access
         </h1>
-        <div>
-            <img
-                    src="./assets/preview-img-1.png"
-                    srcset="./assets/preview-img-1@2x.png 2x"
-                    alt="img 1"
-            />
+        <div class="banner__slogans">
+            <div class="banner__slogans-item">
+                <img
+                        class="banner__slogans-img"
+                        src="./assets/preview-img-1.png"
+                        srcset="./assets/preview-img-1@2x.png 2x, ./assets/preview-img-1@3x.png 3x"
+                        alt="img 1"
+                />
+                <span data-i18n="Unlimited Art <br>Creation" class="banner__slogans-text">
+                    Unlimited Art <br>Creation
+                </span>
+            </div>
+            <div class="banner__slogans-item">
+                <img
+                        class="banner__slogans-img"
+                        src="./assets/preview-img-2.png"
+                        srcset="./assets/preview-img-2@2x.png 2x, ./assets/preview-img-2@3x.png 3x"
+                        alt="img 2"
+                />
+                <span data-i18n="Exclusive <br>Styles" class="banner__slogans-text">
+                    Exclusive <br>Styles
+                </span>
+            </div>
+            <div class="banner__slogans-item">
+                <img
+                        class="banner__slogans-img"
+                        src="./assets/preview-img-3.png"
+                        srcset="./assets/preview-img-3@2x.png 2x, ./assets/preview-img-3@3x.png 3x"
+                        alt="img 3"
+                />
+                <span data-i18n="Magic Avatars <br>With 20% Off" class="banner__slogans-text">
+                    Magic Avatars <br>With 20% Off
+                </span>
+            </div>
         </div>
-        <div>
+        <div class="banner__subscriptions">
             btns with subscriptions
         </div>
-        <div class="banner__content__toolbar">
-            <a data-i18n="Terms of Use" href="https://apple.com/" target="_blank" rel="noopener noreferrer">
+        <div class="banner__toolbar">
+            <a
+                    class="banner__toolbar-link"
+                    data-i18n="Terms of Use"
+                    href="https://apple.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+            >
                 Terms of Use
             </a>
-            <a data-i18n="Privacy Policy" href="https://google.com/" target="_blank" rel="noopener noreferrer">
+            <a
+                    class="banner__toolbar-link"
+                    data-i18n="Privacy Policy"
+                    href="https://google.com/"
+                    target="_blank"
+                    rel="noopener noreferrer">
                 Privacy Policy
             </a>
-            <a data-i18n="Restore" href="#" target="_blank" rel="noopener noreferrer">
+            <a class="banner__toolbar-link"
+               data-i18n="Restore"
+               href="#"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
                 Restore
             </a>
         </div>
