@@ -187,6 +187,13 @@ html, body {
     margin-bottom: 0.5rem;
 }
 
+.banner__subscriptions-plan:first-child:has(input[type="radio"]:not(:checked))::after {
+    position: absolute;
+    content: url("./assets/path-right.svg");
+    right: -2px;
+    top: 0;
+}
+
 .banner__subscriptions-plan label,
 .banner__subscriptions-plan input[type="radio"] {
     display: block;
@@ -199,7 +206,7 @@ html, body {
 }
 
 .banner__subscriptions-plan:has(input[type="radio"]:checked) {
-    border-color: var(--color-primary-100);
+    background: linear-gradient(to right, #FF96F4 80%, #00B5FF 100%) border-box;
     background: var(--color-primary-100-30);
 }
 
@@ -215,6 +222,10 @@ html, body {
     position: relative;
 }
 
+.banner__subscriptions-plan:has(input[type="radio"]:checked) .subscriptions-offer__wrapper {
+    background: var(--color-primary-100);
+}
+
 .subscriptions-offer__wrapper {
     position: absolute;
     top: 0;
@@ -224,6 +235,7 @@ html, body {
     transform: translateY(-50%);
     background: linear-gradient(90deg, #BC1FEF 0%, #0035FF 100%) border-box;
     border-radius: 100px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
 }
 
 .subscriptions-offer {
@@ -236,6 +248,23 @@ html, body {
     border-radius: inherit;
     font-size: 0.813rem;
     font-weight: 700;
+    color: var(--color-primary-100);
+}
+
+.banner__subscriptions-plan:first-child:has(input[type="radio"]:not(:checked)) .subscriptions-offer::after {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    transform: translateX(-100%);
+    content: url("./assets/path-left.svg");
+}
+
+.banner__subscriptions-plan:has(input[type="radio"]:checked) .subscriptions-offer {
+    color: var(--color-primary-900);
+}
+
+.banner__subscriptions-plan:has(input[type="radio"]:checked) .subscriptions-offer::before {
+    background: var(--color-primary-100) border-box;
 }
 
 .subscriptions-offer::before {
