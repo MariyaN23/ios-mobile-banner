@@ -175,8 +175,7 @@ html, body {
     position: relative;
     border: 1px solid transparent;
     border-radius: 100px;
-    padding: 0.563rem 3.5rem 0.563rem 1.5rem;
-    height: 56px;
+    padding: 0.563rem 2.5rem 0.563rem 1.5rem;
     display: grid;
     align-items: center;
     grid-template-columns: 3fr 1fr;
@@ -243,7 +242,7 @@ html, body {
 
 .subscriptions-offer__wrapper {
     position: absolute;
-    top: 0;
+    top: -2px;
     right: 1.5rem;
     height: 20px;
     min-width: 119px;
