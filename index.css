@@ -157,7 +157,7 @@ html, body {
     align-items: center;
     justify-content: space-evenly;
     margin-top: 1.75rem;
-    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+    margin-bottom: 0.5rem;
 }
 
 .banner__toolbar-link {
@@ -349,6 +349,6 @@ and (-webkit-device-pixel-ratio: 3) {
     }
 
     .banner__toolbar {
-        padding-bottom: calc(0.25rem + env(safe-area-inset-bottom));
+        margin-bottom: 0.25rem;
     }
 }

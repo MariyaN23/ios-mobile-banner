@@ -4,6 +4,12 @@ const availableLanguages = ['de', 'en', 'es', 'fr', 'ja', 'pt']
 const fallbackLanguage = 'en'
 
 const htmlElement = document.documentElement
+const form = document.getElementById('form')
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+    window.location.href = '#'
+})
 
 function getFormattedPrice(locale, amount) {
     return new Intl.NumberFormat(locale, {
