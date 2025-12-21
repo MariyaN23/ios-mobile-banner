@@ -1,10 +1,14 @@
 :root {
-    --color-primary-100: #FFFFFF;
+    --color-primary-100: rgba(255, 255, 255, 1);
+    --color-primary-100-30: rgba(255, 255, 255, 0.3);
+    --color-primary-900: rgba(7, 11, 51, 1);
 }
 
 *,
 *::before,
 *::after {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--color-primary-100);
@@ -24,6 +28,7 @@ html, body {
 .banner {
     position: relative;
     overflow: hidden;
+    max-width: 420px;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(
@@ -85,8 +90,10 @@ html, body {
 }
 
 .banner__slogans {
+    padding: 0 1.5rem;
     display: flex;
-    gap: 0.25rem;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .banner__slogans-item {
@@ -128,7 +135,7 @@ html, body {
     );
 }
 
-.banner__slogans-item:not(:first-child)::after  {
+.banner__slogans-item:not(:first-child)::after {
     background-color: rgba(255, 130, 228, 0.24);
 }
 
@@ -155,13 +162,66 @@ html, body {
     opacity: 0.3;
 }
 
+.banner__subscriptions {
+    width: 100%;
+    padding: 0 1.5rem;
+}
+
+.banner__subscriptions-plan {
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    padding: 0.563rem 3.5rem 0.563rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(11px);
+    background: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    -webkit-user-select: none;
+    transition: all 0.3s ease;
+}
+
+.banner__subscriptions-plan label,
+.banner__subscriptions-plan input[type="radio"] {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.banner__subscriptions-plan:has(input[type="radio"]:checked) {
+    border-color: var(--color-primary-100);
+    background: var(--color-primary-100-30);
+}
+
+.banner__subscriptions-price {
+    opacity: 0.7;
+}
+
+.banner__subscriptions-title {
+    font-weight: 600;
+}
+
+.banner__subscriptions-btn {
+    all: unset;
+    width: 100%;
+    border-radius: 100px;
+    padding: 1rem 0;
+    color: var(--color-primary-900);
+    background: var(--color-primary-100);
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+}
+
 @media only screen
 and (min-device-width: 390px)
 and (-webkit-device-pixel-ratio: 3) {
-    .banner__slogans {
-        gap: 0.375rem;
-    }
-
     .banner__slogans-item {
         width: 110px;
         height: 146px;
@@ -170,7 +230,7 @@ and (-webkit-device-pixel-ratio: 3) {
     }
 
     .banner__slogans-item::after {
-       background-color: rgba(255, 130, 228, 0.24);
+        background-color: rgba(255, 130, 228, 0.24);
     }
 
     .banner__slogans-text {

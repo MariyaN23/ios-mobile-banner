@@ -50,9 +50,44 @@
                 </span>
             </div>
         </div>
-        <div class="banner__subscriptions">
-            btns with subscriptions
-        </div>
+        <form class="banner__subscriptions">
+            <div class="banner__subscriptions-plan">
+                <input type="radio" id="yearly" name="subscription" value="yearly" checked/>
+                <label for="yearly" data-i18n="YEARLY ACCESS">YEARLY ACCESS</label>
+                <div class="banner__subscriptions-content">
+                    <div>
+                        <div data-i18n="YEARLY ACCESS" class="banner__subscriptions-title">
+                            YEARLY ACCESS
+                        </div>
+                        <div data-i18n="Just {{yearlyAccess}} per year" class="banner__subscriptions-price">
+                            Just {{yearlyAccess}} per year
+                        </div>
+                    </div>
+                </div>
+                <div class="banner__subscriptions-content">
+                    <div data-i18n="{{yearlyPerWeek}} <br>per week" class="banner__subscriptions-price">
+                        {{yearlyPerWeek}} <br>per week
+                    </div>
+                </div>
+            </div>
+            <div class="banner__subscriptions-plan">
+                <input type="radio" id="weekly" name="subscription" value="weekly"/>
+                <label for="weekly" data-i18n="WEEKLY ACCESS">WEEKLY ACCESS</label>
+                <div class="banner__subscriptions-content">
+                    <div data-i18n="WEEKLY ACCESS" class="banner__subscriptions-title">
+                        WEEKLY ACCESS
+                    </div>
+                </div>
+                <div class="banner__subscriptions-content">
+                    <div data-i18n="{{weeklyAccess}} <br>per week" class="banner__subscriptions-price">
+                        {{weeklyAccess}} <br>per week
+                    </div>
+                </div>
+            </div>
+            <button data-i18n="Continue" class="banner__subscriptions-btn" type="submit">
+                Continue
+            </button>
+        </form>
         <div class="banner__toolbar">
             <a
                     class="banner__toolbar-link"
