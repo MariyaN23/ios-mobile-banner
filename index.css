@@ -176,9 +176,10 @@ html, body {
     border: 1px solid transparent;
     border-radius: 100px;
     padding: 0.563rem 3.5rem 0.563rem 1.5rem;
-    display: flex;
+    height: 56px;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    grid-template-columns: 3fr 1fr;
     backdrop-filter: blur(11px);
     background: rgba(255, 255, 255, 0.1);
     user-select: none;
@@ -214,6 +215,20 @@ html, body {
     opacity: 0.7;
 }
 
+.banner__subscriptions-title:not(:lang(en)) {
+    font-size: 0.938rem;
+}
+
+.banner__subscriptions-price:not(:lang(en)) {
+    font-size: 0.813rem;
+}
+
+.banner__subscriptions-price:lang(es),
+.banner__subscriptions-price:lang(fr),
+.banner__subscriptions-price:lang(pt) {
+    font-size: 0.688rem;
+}
+
 .banner__subscriptions-title {
     font-weight: 600;
 }
@@ -231,7 +246,7 @@ html, body {
     top: 0;
     right: 1.5rem;
     height: 20px;
-    width: 119px;
+    min-width: 119px;
     transform: translateY(-50%);
     background: linear-gradient(90deg, #BC1FEF 0%, #0035FF 100%) border-box;
     border-radius: 100px;
@@ -241,6 +256,7 @@ html, body {
 .subscriptions-offer {
     width: 100%;
     height: 100%;
+    padding: 0 1.375rem;
     position: relative;
     display: flex;
     align-items: center;
