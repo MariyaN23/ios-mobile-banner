@@ -28,7 +28,7 @@ html, body {
 .banner {
     position: relative;
     overflow: hidden;
-    max-width: 420px;
+    max-width: 440px;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(
@@ -48,11 +48,8 @@ html, body {
     url('./assets/banner-img.png'),
     linear-gradient(136.59deg, #DA28FF 3.34%, #7FCCFF 92.15%);
     background-size: contain;
-    background-position: top;
+    background-position: 50% -25%;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .banner::before {
@@ -76,10 +73,11 @@ html, body {
 }
 
 .banner__content {
+    margin-top: 156px;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 .banner__content__title {
@@ -87,6 +85,7 @@ html, body {
     font-size: 2.625rem;
     line-height: 2.875rem;
     font-weight: 900;
+    margin-bottom: 1rem;
 }
 
 .banner__slogans {
@@ -94,6 +93,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-bottom: 1.625rem;
 }
 
 .banner__slogans-item {
@@ -152,6 +152,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 1.75rem 0 0.5rem 0;
 }
 
 .banner__toolbar-link {
@@ -180,6 +181,7 @@ html, body {
     user-select: none;
     -webkit-user-select: none;
     transition: all 0.3s ease;
+    margin-bottom: 0.5rem;
 }
 
 .banner__subscriptions-plan label,
@@ -222,6 +224,26 @@ html, body {
 @media only screen
 and (min-device-width: 390px)
 and (-webkit-device-pixel-ratio: 3) {
+    .banner {
+        background-position: center top;
+    }
+
+    .banner::before {
+        top: 0;
+    }
+
+    .banner__content {
+        margin-top: 266px;
+    }
+
+    .banner__content__title {
+        margin-bottom: 1.5rem;
+    }
+
+    .banner__slogans {
+        margin-bottom: 2.125rem;
+    }
+
     .banner__slogans-item {
         width: 110px;
         height: 146px;
@@ -235,5 +257,13 @@ and (-webkit-device-pixel-ratio: 3) {
 
     .banner__slogans-text {
         left: 8px;
+    }
+
+    .banner__subscriptions-btn {
+        margin-top: 0.5rem;
+    }
+
+    .banner__toolbar {
+        margin: 1.75rem 0 0.25rem 0;
     }
 }
