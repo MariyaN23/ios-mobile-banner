@@ -51,6 +51,7 @@ html, body {
     background-position: 50% -25%;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
 }
 
 .banner::before {
@@ -153,7 +154,8 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    margin: 1.75rem 0 0.5rem 0;
+    margin-top: 1.75rem;
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
 }
 
 .banner__toolbar-link {
@@ -209,6 +211,46 @@ html, body {
     font-weight: 600;
 }
 
+.banner__subscriptions-plan:first-child {
+    position: relative;
+}
+
+.subscriptions-offer__wrapper {
+    position: absolute;
+    top: 0;
+    right: 1.5rem;
+    height: 20px;
+    width: 119px;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, #BC1FEF 0%, #0035FF 100%) border-box;
+    border-radius: 100px;
+}
+
+.subscriptions-offer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: inherit;
+    font-size: 0.813rem;
+    font-weight: 700;
+}
+
+.subscriptions-offer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+    background: linear-gradient(270deg, #00B5FF 0%, #632AF7 53.01%, #FF96F4 100%) border-box;
+    mask: linear-gradient(black, black) border-box,
+    linear-gradient(black, black) padding-box;
+    mask-composite: subtract;
+}
+
 .banner__subscriptions-btn {
     all: unset;
     width: 100%;
@@ -261,6 +303,6 @@ and (-webkit-device-pixel-ratio: 3) {
     }
 
     .banner__toolbar {
-        margin: 1.75rem 0 0.25rem 0;
+        padding-bottom: calc(0.25rem + env(safe-area-inset-bottom));
     }
 }
