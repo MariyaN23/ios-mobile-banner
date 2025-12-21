@@ -50,6 +50,7 @@ html, body {
     background-size: contain;
     background-position: 50% -25%;
     background-repeat: no-repeat;
+    display: flex;
 }
 
 .banner::before {
@@ -73,14 +74,14 @@ html, body {
 }
 
 .banner__content {
-    margin-top: 156px;
-    height: 100%;
-    width: 100%;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
 }
 
 .banner__content__title {
+    margin-top: auto;
     text-align: center;
     font-size: 2.625rem;
     line-height: 2.875rem;
@@ -230,10 +231,6 @@ and (-webkit-device-pixel-ratio: 3) {
 
     .banner::before {
         top: 0;
-    }
-
-    .banner__content {
-        margin-top: 266px;
     }
 
     .banner__content__title {
