@@ -354,6 +354,6 @@ and (-webkit-device-pixel-ratio: 3) {
     }
 
     .banner__toolbar {
-        margin-bottom: calc(0.25rem + env(safe-area-inset-bottom));
+        margin-bottom: 0.25rem;
     }
 }
