@@ -41,12 +41,7 @@ html, body {
             rgba(0, 0, 0, 0.95) 77.38%,
             rgba(5, 1, 14, 0.95) 94.32%
     ),
-    image-set(
-            url('./assets/banner-img.png') 1x,
-            url('./assets/banner-img@2x.png') 2x,
-            url('./assets/banner-img@3x.png') 3x
-    ),
-    url('./assets/banner-img.png'),
+    url('./assets/banner-img.jpg'),
     linear-gradient(136.59deg, #DA28FF 3.34%, #7FCCFF 92.15%);
     background-size: contain;
     background-position: 50% -25%;
