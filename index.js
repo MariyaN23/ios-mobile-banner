@@ -6,9 +6,15 @@ const fallbackLanguage = 'en'
 const htmlElement = document.documentElement
 const form = document.getElementById('form')
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault()
-    window.location.href = '#'
+    const selectedSubscription = document.querySelector('input[name="subscription"]:checked').value
+    if (selectedSubscription === 'yearly') {
+        window.location.href = 'https://www.apple.com'
+    }
+    if (selectedSubscription === 'weekly') {
+        window.location.href = 'https://www.google.com'
+    }
 })
 
 function getFormattedPrice(locale, amount) {
