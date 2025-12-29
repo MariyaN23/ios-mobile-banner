@@ -1,0 +1,17 @@
+{
+  "USD": {
+    "yearlyAccess": 39.99,
+    "yearlyPerWeek": 0.48,
+    "weeklyAccess": 6.99
+  },
+  "EUR": {
+    "yearlyAccess": 34.14,
+    "yearlyPerWeek": 0.41,
+    "weeklyAccess": 5.97
+  },
+  "JPY": {
+    "yearlyAccess": 6277.11,
+    "yearlyPerWeek": 75.34,
+    "weeklyAccess": 1097.20
+  }
+}

@@ -1,4 +1,15 @@
-import { currency, price, translations } from "./i18n.js";
+let currencyData = null
+let pricesData = null
+let translations = {}
+
+async function loadJson(file) {
+    try {
+        const response = await fetch(`i18n/${file}.json`)
+        return await response.json()
+    } catch (error) {
+        return `Failed to load file: ${error}`
+    }
+}
 
 const availableLanguages = ['de', 'en', 'es', 'fr', 'ja', 'pt']
 const fallbackLanguage = 'en'
@@ -18,16 +29,26 @@ form.addEventListener('submit', function (e) {
 })
 
 function getFormattedPrice(locale, amount) {
+    const currencyCode = currencyData[locale] || currencyData[fallbackLanguage]
     return new Intl.NumberFormat(locale, {
         style: 'currency',
-        currency: currency[locale]
+        currency: currencyCode
     }).format(amount)
 }
 
-function applyTranslations() {
+async function applyTranslations() {
     const currentLang = htmlElement.lang
-    const curr = currency[currentLang]
-    const prices = price[curr]
+    if (!currencyData) currencyData = await loadJson('currency')
+    if (!pricesData) pricesData = await loadJson('price')
+    if (!translations[currentLang]) {
+        translations[currentLang] = await loadJson(`${currentLang}`)
+    } else {
+        translations[currentLang] = await loadJson(`${fallbackLanguage}`)
+    }
+
+    const currencyCode = currencyData[currentLang] || currencyData[fallbackLanguage]
+    const prices = pricesData[currencyCode]
+
     document.querySelectorAll('[data-i18n]').forEach(element => {
         const key = element.getAttribute('data-i18n')
         let translation = translations[currentLang]?.[key] || translations[fallbackLanguage]?.[key] || key
@@ -43,15 +64,15 @@ function applyTranslations() {
     })
 }
 
-function updateLanguage(lang) {
+async function updateLanguage(lang) {
     const url = new URL(window.location)
     url.searchParams.set('lang', lang)
     window.history.replaceState({}, '', url)
     htmlElement.lang = lang
-    applyTranslations()
+    await applyTranslations()
 }
 
-function initializeLanguage() {
+async function initializeLanguage() {
     const url = new URL(window.location)
     let currentLanguage = url.searchParams.get('lang')
 
@@ -59,9 +80,9 @@ function initializeLanguage() {
         htmlElement.lang = currentLanguage
     } else {
         currentLanguage = fallbackLanguage
-        updateLanguage(currentLanguage)
+        await updateLanguage(currentLanguage)
     }
-    applyTranslations()
+    await applyTranslations()
 }
 
-initializeLanguage()
+await initializeLanguage()
